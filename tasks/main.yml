@@ -1,0 +1,10 @@
+---
+
+ - name: "Install ca-certificates tooling"
+   ansible.builtin.apt:
+       pkg:
+        - ca-certificates
+
+ - name: "Perform CA update"
+   become: true
+   command: update-ca-certificates --fresh
